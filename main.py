@@ -19,5 +19,12 @@ def sortbysalary():
     sorted = df.sort_values(by=['salary'],ascending = False)
     print(sorted)
 
+@app.command()
+def seedataengineer():
+    """see list of data engineer items"""
+    df = pd.read_csv('ds_salaries.csv')
+    dataengineer_list = df[df['job_title'] == 'Data Engineer']
+    print(dataengineer_list)
+
 if __name__ == "__main__":
     app()
